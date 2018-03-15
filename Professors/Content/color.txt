@@ -1,5 +1,0 @@
-#1f1f27 - gray
-#009ea5 - light blue 
-#6876a6 - violet blue faded
-#8ed1bb - light blue faded
-#f4f0bf - cream white
