@@ -1,0 +1,19 @@
+﻿@{
+    if (IsPost)
+    {
+        //var payload = Request["dataa"];
+        var payload = Request.Unvalidated()["dataa"];
+        //var userComment = Request.Form["userInput"]; // Validated, throws error if input includes markup
+
+        //Request.Unvalidated("userInput"); // Validation bypassed
+        //Request.Unvalidated().Form["userInput"]; // Validation bypassed
+
+        //Request.QueryString["userPreference"]; // Validated
+        //Request.Unvalidated().QueryString["userPreference"]; // Validation bypassed;
+        RTUDB a = new RTUDB();
+        a.QuickBind(new string[] { payload });
+        a.NonQuery("INSERT INTO testsaving (test) VALUES (@1)");
+        a.CloseConnection();
+    }
+}
+

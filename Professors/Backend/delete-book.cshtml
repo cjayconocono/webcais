@@ -1,0 +1,20 @@
+﻿@{
+
+    if (IsPost)
+    {
+
+        string bookID = Request["bkID"];
+
+        RTUDB a = new RTUDB();
+        a.QuickBind(new string[] { bookID });
+        a.NonQuery("UPDATE book_tbl SET isDeleted = '1' where book_id = @1");
+        a.CloseConnection();
+        Session["book-add"] = "False";
+        Session["book-edit"] = "True";
+        Response.Redirect("~/Professors/Books");
+
+       
+
+
+    }
+}

@@ -1,0 +1,17 @@
+﻿@{
+
+    if (IsPost)
+    {
+        
+        string ChapterName = Request.Form["ChapterName"];
+
+
+
+        RTUDB a = new RTUDB();
+        a.QuickBind(new string[] { ChapterName });
+        a.NonQuery("INSERT INTO chapter_tbl ( chapter_desc ) VALUES ( @1 )");
+        a.CloseConnection();
+
+        
+    }
+}
