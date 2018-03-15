@@ -9,10 +9,10 @@
 
         var uploadedFile = Request.Files["payl"];
         fileName = Guid.NewGuid().ToString() + "_" + Path.GetFileName(uploadedFile.FileName);
-        fileSavePath = Server.MapPath("/Professors/Backend/images/" + fileName);
+        fileSavePath = Server.MapPath("images/" + fileName);
         uploadedFile.SaveAs(fileSavePath);
         RTUDB a = new RTUDB();
-        a.QuickBind(new string[] { bookName,authorsName,color,@"Backend/images/" + fileName });
+        a.QuickBind(new string[] { bookName,authorsName,color,@"../Backend/images/" + fileName });
         a.NonQuery("INSERT INTO book_tbl (book_title, book_author, book_image, book_color ) VALUES (@1, @2, @4, @3)");
         a.CloseConnection();
    

@@ -6,7 +6,7 @@
         <script type="text/javascript">
              window.onload = function () {
                  swal("Successfully Added A New Book!");
-                 Session["book-add"] = null;
+                 Session["book-add"] = "false";
              };
         </script>
     }
@@ -30,19 +30,19 @@
     <title>ELRN | BOOK</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <link rel="stylesheet" href="AdminLTE/AdminLTE-2.4.0-rc/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../AdminLTE/AdminLTE-2.4.0-rc/bower_components/bootstrap/dist/css/bootstrap.min.css">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="AdminLTE/AdminLTE-2.4.0-rc/bower_components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../AdminLTE/AdminLTE-2.4.0-rc/bower_components/font-awesome/css/font-awesome.min.css">
     <!-- Ionicons -->
-    <link rel="stylesheet" href="AdminLTE/AdminLTE-2.4.0-rc/bower_components/Ionicons/css/ionicons.min.css">
+    <link rel="stylesheet" href="../AdminLTE/AdminLTE-2.4.0-rc/bower_components/Ionicons/css/ionicons.min.css">
 
 
     <!-- Theme style -->
-    <link rel="stylesheet" href="AdminLTE/AdminLTE-2.4.0-rc/dist/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="../AdminLTE/AdminLTE-2.4.0-rc/dist/css/AdminLTE.min.css">
     <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
           page. However, you can choose any other skin. Make sure you
           apply the skin class to the body tag so the changes take effect. -->
-    <link rel="stylesheet" href="AdminLTE/AdminLTE-2.4.0-rc/dist/css/skins/skin-blue.min.css">
+    <link rel="stylesheet" href="../AdminLTE/AdminLTE-2.4.0-rc/dist/css/skins/skin-blue.min.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -149,12 +149,12 @@
                 <!--   /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
                 <!--   /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
                 <!--   /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
-                <link rel="stylesheet" href="content/cd.css">
-                <link rel="stylesheet" href="sm/dist/sweetalert.css">
-                <script src="sm/dist/sweetalert.min.js"></script>
+                <link rel="stylesheet" href="../content/cd.css">
+                <link rel="stylesheet" href="../sm/dist/sweetalert.css">
+                <script src="../sm/dist/sweetalert.min.js"></script>
 
-                <link rel="stylesheet" href="content/color.css">
-                <link rel="stylesheet" href="AdminLTE/AdminLTE-2.4.0-rc/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
+                <link rel="stylesheet" href="../content/color.css">
+                <link rel="stylesheet" href="../AdminLTE/AdminLTE-2.4.0-rc/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
 
 
 
@@ -174,7 +174,7 @@
                         }
                 </style>
 
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+                <script src="../https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
 
 
 
@@ -480,7 +480,7 @@
                                     </div>
                                     <div class="clash-card__unit-name"><p>@title</p><p style="font-size: 0.4em;">@author</p></div>
                                     <div class="clash-card__unit-stats clearfix " style="background-color: @color;">
-                                        <a style="padding:0px;" name="view" value="View" href="?x=CHAPTER">
+                                        <a style="padding:0px;" name="view" value="View" href="../Chapters/?book=@bookID">
                                             <div class="one-third">
                                                 <div class="stat">
                                                     <i class="fa fa-eye" aria-hidden="true" style="color:white;"></i>
@@ -551,7 +551,7 @@
                                                         <div class="col-md-12">
                                                             <div class="form-group">
                                                                 <span style="color: black;">File Input</span>
-                                                                <input name="payl2" type="file" id="exampleInputFile">
+                                                                <input name="payl2" type="file" accept="image/*" id="exampleInputFile">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -728,11 +728,11 @@
                 <!--   /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
                 <!-- REQUIRED JS SCRIPTS -->
                 <!-- jQuery 3 -->
-                <script src="AdminLTE/AdminLTE-2.4.0-rc/bower_components/jquery/dist/jquery.min.js"></script>
+                <script src="../AdminLTE/AdminLTE-2.4.0-rc/bower_components/jquery/dist/jquery.min.js"></script>
                 <!-- Bootstrap 3.3.7 -->
-                <script src="AdminLTE/AdminLTE-2.4.0-rc/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+                <script src="../AdminLTE/AdminLTE-2.4.0-rc/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
                 <!-- AdminLTE App -->
-                <script src="AdminLTE/AdminLTE-2.4.0-rc/dist/js/adminlte.min.js"></script>
+                <script src="../AdminLTE/AdminLTE-2.4.0-rc/dist/js/adminlte.min.js"></script>
 
                 <!-- Optionally, you can add Slimscroll and FastClick plugins.
                      Both of these plugins are recommended to enhance the
@@ -741,12 +741,12 @@
 
 
                 <script type="text/javascript">
-        $("#addbook").click(function(){
-        $("#panel").slideToggle("slow");
-          });
-        $("#share").click(function(){
-        $("#panel2").slideToggle("slow");
-          });
+                    $("#addbook").click(function(){
+                    $("#panel").slideToggle("slow");
+                      });
+                    $("#share").click(function(){
+                    $("#panel2").slideToggle("slow");
+                      });
 
 
                 </script>

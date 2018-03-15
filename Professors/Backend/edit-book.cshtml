@@ -8,13 +8,15 @@
         string bookName = Request["eTitle"];
         string authorsName = Request["eAuthor"];
         var uploadedFile = Request.Files["payl2"];
+        
+    
         if (uploadedFile != null && color != null)
         {
             fileName = Guid.NewGuid().ToString() + "_" + Path.GetFileName(uploadedFile.FileName);
-            fileSavePath = Server.MapPath("/Professors/Backend/images/" + fileName);
+            fileSavePath = Server.MapPath("images/" + fileName);
             uploadedFile.SaveAs(fileSavePath);
             RTUDB a = new RTUDB();
-            a.QuickBind(new string[] { bookName, authorsName, color, @"Backend/images/" + fileName, bookID });
+            a.QuickBind(new string[] { bookName, authorsName, color, @"../Backend/images/" + fileName, bookID });
             a.NonQuery("UPDATE book_tbl SET book_title = @1, book_author = @2, book_color = @3, book_image = @4 where book_id = @5");
             a.CloseConnection();
             Session["book-add"] = "False";
@@ -24,10 +26,10 @@
         else if(uploadedFile != null && color == null)
         {
             fileName = Guid.NewGuid().ToString() + "_" + Path.GetFileName(uploadedFile.FileName);
-            fileSavePath = Server.MapPath("/Professors/Backend/images/" + fileName);
+            fileSavePath = Server.MapPath("images/" + fileName);
             uploadedFile.SaveAs(fileSavePath);
             RTUDB a = new RTUDB();
-            a.QuickBind(new string[] { bookName, authorsName, @"Backend/images/" + fileName, bookID });
+            a.QuickBind(new string[] { bookName, authorsName, @"../Backend/images/" + fileName, bookID });
             a.NonQuery("UPDATE book_tbl SET book_title = @1, book_author = @2, book_image = @3 where book_id = @4");
             a.CloseConnection();
             Session["book-add"] = "False";
