@@ -1,0 +1,57 @@
+﻿@{
+    if (IsPost)
+    {
+
+        RTUDB conn = new RTUDB();
+        conn.QuickBind(new string[] { Request["studnumber"]});
+        var dT = conn.Select("Select student_number from student_tbl where student_number = @1");
+        if (dT.Rows.Count > 0)
+        {
+            <script>
+
+                alert("Student number already taken!")
+
+                window.onload = function () {
+                    history.back()
+                };
+    
+            </script>
+        }
+        else
+        {
+            string student_number = Request["studnumber"];
+
+            string fname = Request["fname"];
+
+            string mname = Request["mname"];
+
+            string lname = Request["lname"];
+
+            string course = Request["course"];
+
+            string year = Request["year"];
+
+            string bday = Request["bday"];
+
+            string bplace = Request["bplace"];
+
+
+
+
+            RTUDB a = new RTUDB();
+            a.QuickBind(new string[] { student_number, fname, mname, lname, course, year, bday, bplace });
+            a.NonQuery("INSERT INTO student_tbl (student_number, first_name, middle_name, last_name, course, year, birth_date, address ) VALUES (@1, @2, @3, @4, @5, @6, @7, @8)");
+            a.CloseConnection();
+
+            <script> alert("Successfully Registered!")
+                window.location = '../';
+            </script>
+
+            //Response.Redirect("~/student/");
+        }
+
+
+
+    }
+}
+

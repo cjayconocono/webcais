@@ -1,0 +1,16 @@
+﻿@{
+
+
+    if (IsPost)
+    {
+
+        string studID = Request["studID"];
+      
+
+
+        RTUDB a = new RTUDB();
+        a.QuickBind(new string[] { studID });
+        a.NonQuery("UPDATE student_tbl SET isApproved = '1' where student_id = @1");
+        a.CloseConnection();
+    }
+}

@@ -1,5 +1,5 @@
 ﻿@helper adminChecker() {
-    if (Session["user_level"] == null || Session["user_level"] != "admin")
+    if (Session["user_level"] == null || Session["user_level"] != "Administrator")
     {
             Response.Redirect("~/Admin/");
     }

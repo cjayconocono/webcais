@@ -1,0 +1,26 @@
+﻿
+@{
+    string BookID2 = @UrlData[0].ToString();
+    int a;
+    bool isNumeric1 = int.TryParse(BookID2, out a);
+    string ChapterID = @UrlData[1].ToString();
+    int b;
+    bool isNumeric2 = int.TryParse(ChapterID, out b);
+
+}
+
+@{
+
+    if (isNumeric1 == true && isNumeric2 == true)
+    {
+        @RenderPage("~/Admin/Layout/_chapter_contents.cshtml");
+    }
+    else if (isNumeric1 == true && isNumeric2 == false)
+    {
+        @RenderPage("~/Admin/Layout/_chapter.cshtml");
+    }
+    else
+    {
+        @RenderPage("~/Admin/Layout/_book.cshtml");
+    }
+}

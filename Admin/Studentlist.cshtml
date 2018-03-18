@@ -1,0 +1,19 @@
+﻿
+@{
+    string urlstudID = @UrlData[0].ToString();
+    int a;
+    bool isNumeric1 = int.TryParse(urlstudID, out a);
+
+}
+
+@{
+  
+     if (isNumeric1 == true )
+    {
+        @RenderPage("~/Admin/Layout/_studentlist_result.cshtml");
+    }
+    else
+    {
+        @RenderPage("~/Admin/Layout/_studentlist.cshtml");
+    }
+}
